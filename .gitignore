@@ -1,1 +1,3 @@
-/.idea
+__pycache__
+animal_shop/__pycache__
+.idea
