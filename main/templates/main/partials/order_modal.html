@@ -1,0 +1,72 @@
+<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModal"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form action="/order" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100 text-center" id="exampleModalLongTitle">Создание заказа</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">Имя</label>
+                            <input type="text" class="form-control" id="firstName" name="first_name">
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName">Фамилия</label>
+                            <input type="text" class="form-control" id="lastName" name="last_name">
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="city">Город</label>
+                            <input type="text" class="form-control" id="city" name="city">
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="address">Отделение новой почты</label>
+                            <input type="text" class="form-control" id="address" name="address">
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="phone_number">Номер телефона</label>
+                            <input type="text" class="form-control" id="phone_number" name="phone_number">
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email">
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Отменить</button>
+                    <button type="submit" class="btn btn-primary">Подтвердить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

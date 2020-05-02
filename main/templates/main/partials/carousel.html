@@ -1,0 +1,27 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            {% load static %}
+            <img class="d-block w-100" src="{% static 'main/images/slide1.jpeg' %}" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            {% load static %}
+            <img class="d-block w-100" src="{% static 'main/images/logo.svg' %}" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            {% load static %}
+            <img class="d-block w-100" src="{% static 'main/images/logo.svg' %}" alt="First slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <i class="fa fa-2x fa-arrow-circle-left"></i>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <i class="fa fa-2x fa-arrow-circle-right"></i>
+    </a>
+</div>

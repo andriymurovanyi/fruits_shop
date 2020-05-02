@@ -1,0 +1,46 @@
+{% extends 'main/index.html' %}
+
+{% block title %}
+    <title>{{ product.name }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="product-wrapper mt-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">
+                    <strong>{{ product }}</strong>
+                </h5>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="image-wrapper">
+                            <img src="{{ product.image.url }}" alt="{{ product }}">
+                        </div>
+                    </div>
+                    <div class="col-sm-8 d-flex align-items-center">
+                        <span>{{ product.description }}</span>
+                    </div>
+                </div>
+                <div class="product__price d-flex justify-content-end">
+                    <strong>Цена</strong>
+                    <div class="price">
+                        <div class="price__current">
+                            <span>{{ product.price }}</span>
+                            грн/шт.
+                        </div>
+                    </div>
+                </div>
+                <div class="card-actions d-flex justify-content-end">
+                    <button onclick="buyProduct({{ product.id }})" class="btn btn-warning mx-2">Купить</button>
+                    <button onclick="addProductToCart(event, {{ product.id }})"
+                            class="btn btn-success"
+                            id="btn_{{ product.id }}"
+                    >
+                        <span class="cart-btn fa fa-shopping-cart"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

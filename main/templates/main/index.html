@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>Экзотические фрукты</title>
+    {% endblock %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/index.css' %}">
+    <script src="https://kit.fontawesome.com/f98ae0feab.js" crossorigin="anonymous"></script>
+</head>
+<body>
+{% include 'main/partials/navbar.html' %}
+<div class="wrapper"></div>
+    <div class="container container-fluid content">
+        {% block content %} {% endblock %}
+    </div>
+    {% if not hide_footer %}
+        <div class="footer">
+            {% include 'main/partials/footer.html' %}
+        </div>
+    {% endif %}
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% load static %}
+<script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'main/js/index.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'main/index.html' %}
+
+{% block content %}
+    <div class="container font-weight-bold">
+    {% for product in cart %}
+    <div id="product_{{ product.id }}"
+         class="row w-100 bg-warning p-4 my-3  mx-auto rounded d-flex justify-content-between nowrap">
+        <div class="row">
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+            <div class="my-auto ml-3 text-left">
+                <p>{{ product.name}}</p>
+                <p>{{ product.price }} грн/шт. </p>
+                <p>{{ product.quantity }} шт.</p>
+            </div>
+        </div>
+        <div class="float-right">
+            <button onclick="removeProductFromCart( {{ product.id }})"
+                    name="delete-button"
+                    class="btn mx-auto btn-danger rounded"
+            ><i class="fas fa-trash"></i></button>
+        </div>
+    </div>
+    {% endfor %}
+    {% if cart_length > 0 %}
+        {% include 'main/partials/order_modal.html' %}
+        <div id="total_price" class="text-center font-weight-bold h4">Итого: {{ total_price }} грн</div>
+        <div class="d-flex w-100 my-3">
+            <button type="button"
+                    class="btn btn-success font-weight-bold mx-auto py-2"
+                    id="order_form_toggle"
+                    data-toggle="modal"
+                    data-target="#orderModal">
+                Перейти к оформлению заказа
+            </button>
+        </div>
+    {% else %}
+        <div class="d-flex justify-content-center">
+            {% load static %}
+            <img src="{% static 'main/images/empty_cart.png' %}" alt="empty_cart">
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
