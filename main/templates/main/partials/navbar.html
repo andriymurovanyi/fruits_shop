@@ -10,13 +10,13 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link text-success" href="#">Доставка и оплата</a>
+                <a class="nav-link text-success" href="#" onclick="return false">Доставка и оплата</a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
             <a id="cart_toggle" class="btn btn-danger mx-2" href="/cart">
                 <i class="fa fa-shopping-cart"></i>
-                <span class='badge badge-warning' id='lblCartCount'>0</span>
+                <span class="badge badge-warning" id="lblCartCount">0</span>
             </a>
             {% if not hide_search %}
                 <form action="/" method="get">

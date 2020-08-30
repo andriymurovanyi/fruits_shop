@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    margin-top: auto;
+}
+
 .products-list {
     display: flex;
     justify-content: space-around;

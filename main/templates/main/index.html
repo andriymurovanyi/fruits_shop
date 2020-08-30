@@ -12,15 +12,14 @@
 </head>
 <body>
 {% include 'main/partials/navbar.html' %}
-<div class="wrapper"></div>
+<div class="wrapper pt-3">
     <div class="container container-fluid content">
         {% block content %} {% endblock %}
     </div>
-    {% if not hide_footer %}
-        <div class="footer">
-            {% include 'main/partials/footer.html' %}
-        </div>
-    {% endif %}
+    <div class="footer">
+        {% include 'main/partials/footer.html' %}
+    </div>
+</div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
